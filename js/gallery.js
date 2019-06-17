@@ -9,9 +9,13 @@ function activeGallery() {
   let currentClass = "current";
 
   thumbnails.forEach(function(thumbnail) {
+    let newImageSrc = thumbnail.dataset.largeVersion;
+    let largeVersion = new Image();
+    largeVersion.src = thumbnail.dataset.largeVersion;
+
     thumbnail.addEventListener("click", function() {
       //Code to set clicked image as main image.
-      let newImageSrc = thumbnail.dataset.largeVersion;
+
       let newTitle    = thumbnail.dataset.title;
 
       mainImage.setAttribute("src", newImageSrc);
